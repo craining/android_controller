@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent" >
+
+    <TextView
+        style="@style/textview_shadow"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="40dip"
+        android:text="常规控制"
+        android:textColor="#7FFF00"
+        android:textSize="35sp" />
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="40dip"
+        android:orientation="vertical" >
+
+        <Button
+            android:id="@+id/btn_turn_up"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="15dip"
+            android:layout_marginLeft="25dip"
+            android:layout_marginRight="25dip"
+            android:background="@drawable/btn_normal_bg"
+            android:text="调大音量" />
+
+        <Button
+            android:id="@+id/btn_turn_down"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="15dip"
+            android:layout_marginLeft="25dip"
+            android:layout_marginRight="25dip"
+            android:background="@drawable/btn_normal_bg"
+            android:text="静音" />
+
+        <Button
+            android:id="@+id/btn_call_me"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="15dip"
+            android:layout_marginLeft="25dip"
+            android:layout_marginRight="25dip"
+            android:background="@drawable/btn_normal_bg"
+            android:text="给我打电话" />
+
+        <Button
+            android:id="@+id/btn_record_time"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="15dip"
+            android:layout_marginLeft="25dip"
+            android:layout_marginRight="25dip"
+            android:background="@drawable/btn_normal_bg"
+            android:text="录音N分钟" />
+
+        <Button
+            android:id="@+id/btn_record_start"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="15dip"
+            android:layout_marginLeft="25dip"
+            android:layout_marginRight="25dip"
+            android:background="@drawable/btn_normal_bg"
+            android:text="开始录音" />
+
+        <Button
+            android:id="@+id/btn_record_end"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="15dip"
+            android:layout_marginLeft="25dip"
+            android:layout_marginRight="25dip"
+            android:background="@drawable/btn_normal_bg"
+            android:text="结束录音" />
+    </LinearLayout>
+
+</RelativeLayout>
