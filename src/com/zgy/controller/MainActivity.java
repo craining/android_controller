@@ -12,6 +12,15 @@ import android.widget.LinearLayout.LayoutParams;
 import com.zgy.controller.pwdview.NinePointLineView;
 import com.zgy.controller.pwdview.PwdViewListener;
 
+/**
+ * the main activity, only the right password can jump into the control activity.
+ * @Description:
+ * @author:zhuanggy  
+ * @see:   
+ * @since:      
+ * @copyright © 35.com
+ * @Date:2013-5-31
+ */
 public class MainActivity extends Activity {
 
 	@Override

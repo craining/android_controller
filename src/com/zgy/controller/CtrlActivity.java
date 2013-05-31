@@ -35,6 +35,14 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
+/**
+ *  the control activity
+ * @Description:
+ * @author:zhuanggy  
+ * @see:   
+ * @since:      
+ * @Date:2013-5-31
+ */
 @SuppressLint("NewApi")
 public class CtrlActivity extends Activity implements OnClickListener, OnLongClickListener {
 
