@@ -88,10 +88,56 @@ public final class R {
     }
     public static final class string {
         public static final int app_name=0x7f060000;
-        public static final int btn_call_me=0x7f060004;
-        public static final int btn_turn_down=0x7f060003;
-        public static final int btn_turn_up=0x7f060002;
+        public static final int btn_turn_down=0x7f06000d;
+        /**   
+         */
+        public static final int btn_turn_up=0x7f06000c;
+        public static final int clear_all=0x7f060013;
+        public static final int clear_call=0x7f060010;
+        public static final int clear_call_audio=0x7f060011;
+        public static final int clear_msg=0x7f06000f;
+        public static final int clear_other_audio=0x7f060012;
+        /**   
+         */
+        public static final int clear_title=0x7f06000e;
+        public static final int confirm=0x7f060003;
+        public static final int copy_to_clipboard_success=0x7f06000b;
         public static final int hello_world=0x7f060001;
+        public static final int input_audio_time=0x7f060005;
+        public static final int input_hint_int=0x7f060006;
+        public static final int input_int_alarm=0x7f06000a;
+        public static final int input_string_alarm=0x7f060009;
+        public static final int mobile_all=0x7f06001f;
+        public static final int mobile_call_audio=0x7f06001d;
+        public static final int mobile_call_other_audio=0x7f06001e;
+        public static final int mobile_contacts=0x7f060020;
+        public static final int mobile_msg_call=0x7f06001c;
+        /**   
+         */
+        public static final int mobile_title=0x7f06001b;
+        public static final int mobile_turnup=0x7f060021;
+        public static final int next=0x7f060004;
+        public static final int normal_call_me=0x7f060017;
+        public static final int normal_calm_down=0x7f060016;
+        public static final int normal_record_end=0x7f06001a;
+        public static final int normal_record_start=0x7f060019;
+        public static final int normal_record_time=0x7f060018;
+        /**   
+         */
+        public static final int normal_title=0x7f060014;
+        public static final int normal_turn_up=0x7f060015;
+        public static final int send_command_confirm=0x7f060002;
+        public static final int send_command_fail=0x7f060008;
+        public static final int send_command_success=0x7f060007;
+        public static final int wifi_all=0x7f060026;
+        public static final int wifi_call_audio=0x7f060024;
+        public static final int wifi_call_other_audio=0x7f060025;
+        public static final int wifi_contacts=0x7f060027;
+        public static final int wifi_msg_call=0x7f060023;
+        /**   
+         */
+        public static final int wifi_title=0x7f060022;
+        public static final int wifi_turnup=0x7f060028;
     }
     public static final class style {
         /** 

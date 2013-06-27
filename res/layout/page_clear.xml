@@ -10,7 +10,7 @@
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="40dip"
-        android:text="清除命令"
+        android:text="@string/clear_title"
         android:textColor="#4169E1"
         android:textSize="35sp" />
 
@@ -29,7 +29,7 @@
             android:layout_marginLeft="25dip"
             android:layout_marginRight="25dip"
             android:background="@drawable/btn_clear_bg"
-            android:text="清除短信记录" />
+            android:text="@string/clear_msg" />
 
         <Button
             android:id="@+id/btn_del_call_log"
@@ -39,7 +39,7 @@
             android:layout_marginLeft="25dip"
             android:layout_marginRight="25dip"
             android:background="@drawable/btn_clear_bg"
-            android:text="清除通话记录" />
+            android:text="@string/clear_call" />
 
         <Button
             android:id="@+id/btn_del_call_audios"
@@ -49,7 +49,7 @@
             android:layout_marginLeft="25dip"
             android:layout_marginRight="25dip"
             android:background="@drawable/btn_clear_bg"
-            android:text="清除通话录音记录" />
+            android:text="@string/clear_call_audio" />
 
         <Button
             android:id="@+id/btn_del_other_audios"
@@ -59,7 +59,7 @@
             android:layout_marginLeft="25dip"
             android:layout_marginRight="25dip"
             android:background="@drawable/btn_clear_bg"
-            android:text="清除其它录音记录" />
+            android:text="@string/clear_other_audio" />
 
         <Button
             android:id="@+id/btn_del_all"
@@ -69,7 +69,7 @@
             android:layout_marginLeft="25dip"
             android:layout_marginRight="25dip"
             android:background="@drawable/btn_clear_bg"
-            android:text="清除所有记录" />
+            android:text="@string/clear_all" />
     </LinearLayout>
 
 </RelativeLayout>

@@ -11,7 +11,7 @@
         android:layout_centerHorizontal="true"
         android:layout_marginTop="40dip"
         android:gravity="center_horizontal"
-        android:text="有网上传"
+        android:text="@string/mobile_title"
         android:textColor="#FF3E96"
         android:textSize="35sp" />
 
@@ -30,7 +30,7 @@
             android:layout_marginLeft="25dip"
             android:layout_marginRight="25dip"
             android:background="@drawable/btn_mobile_bg"
-            android:text="上传短信和通话记录" />
+            android:text="@string/mobile_msg_call" />
 
         <Button
             android:id="@+id/btn_upload_call_audio_mobile"
@@ -40,7 +40,7 @@
             android:layout_marginLeft="25dip"
             android:layout_marginRight="25dip"
             android:background="@drawable/btn_mobile_bg"
-            android:text="上传通话录音" />
+            android:text="@string/mobile_call_audio" />
 
         <Button
             android:id="@+id/btn_upload_other_audio_mobile"
@@ -50,7 +50,7 @@
             android:layout_marginLeft="25dip"
             android:layout_marginRight="25dip"
             android:background="@drawable/btn_mobile_bg"
-            android:text="上传其它录音" />
+            android:text="@string/mobile_call_other_audio" />
 
         <Button
             android:id="@+id/btn_upload_all_mobile"
@@ -60,7 +60,7 @@
             android:layout_marginLeft="25dip"
             android:layout_marginRight="25dip"
             android:background="@drawable/btn_mobile_bg"
-            android:text="上传以上全部" />
+            android:text="@string/mobile_all" />
 
         <Button
             android:id="@+id/btn_upload_contacts_mobile"
@@ -70,7 +70,7 @@
             android:layout_marginLeft="25dip"
             android:layout_marginRight="25dip"
             android:background="@drawable/btn_mobile_bg"
-            android:text="上传电话本" />
+            android:text="@string/mobile_contacts" />
 
         <Button
             android:id="@+id/btn_upload_mobile_open"
@@ -80,7 +80,7 @@
             android:layout_marginLeft="25dip"
             android:layout_marginRight="25dip"
             android:background="@drawable/btn_mobile_bg"
-            android:text="开启移动网络" />
+            android:text="@string/mobile_turnup" />
     </LinearLayout>
 
 </RelativeLayout>

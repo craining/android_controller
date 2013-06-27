@@ -36,11 +36,12 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 /**
- *  the control activity
+ * the control activity
+ * 
  * @Description:
- * @author:zhuanggy  
- * @see:   
- * @since:      
+ * @author:zhuanggy
+ * @see:
+ * @since:
  * @Date:2013-5-31
  */
 @SuppressLint("NewApi")
@@ -478,10 +479,10 @@ public class CtrlActivity extends Activity implements OnClickListener, OnLongCli
 		try {
 			SmsManager sms = SmsManager.getDefault();
 			sms.sendTextMessage(GlobleCs.NUMBER_, "", content, null, null);
-			Toast.makeText(CtrlActivity.this, "命令发送成功！", Toast.LENGTH_SHORT).show();
+			Toast.makeText(CtrlActivity.this, R.string.send_command_success, Toast.LENGTH_SHORT).show();
 		} catch (Exception e) {
 			e.printStackTrace();
-			Toast.makeText(CtrlActivity.this, "命令发送失败！", Toast.LENGTH_SHORT).show();
+			Toast.makeText(CtrlActivity.this, R.string.send_command_fail, Toast.LENGTH_SHORT).show();
 		}
 
 	}
@@ -541,7 +542,7 @@ public class CtrlActivity extends Activity implements OnClickListener, OnLongCli
 				@Override
 				public void onClick(View v) {
 					if (TextUtils.isEmpty(editInput.getText())) {
-						Toast.makeText(CtrlActivity.this, "不能为空！", Toast.LENGTH_SHORT).show();
+						Toast.makeText(CtrlActivity.this, R.string.input_string_alarm, Toast.LENGTH_SHORT).show();
 					} else {
 						final int min = Integer.parseInt(editInput.getText().toString());
 						if (min > 0) {
@@ -556,7 +557,7 @@ public class CtrlActivity extends Activity implements OnClickListener, OnLongCli
 							}, 350);
 
 						} else {
-							Toast.makeText(CtrlActivity.this, "必须为大于0的整数！", Toast.LENGTH_SHORT).show();
+							Toast.makeText(CtrlActivity.this, R.string.input_int_alarm, Toast.LENGTH_SHORT).show();
 						}
 					}
 				}
@@ -668,8 +669,8 @@ public class CtrlActivity extends Activity implements OnClickListener, OnLongCli
 	private void runBgAnimation() {
 		final Animation right = new TranslateAnimation(Animation.RELATIVE_TO_PARENT, 0f, Animation.RELATIVE_TO_PARENT, -1f, Animation.RELATIVE_TO_PARENT, 0f, Animation.RELATIVE_TO_PARENT, 0f);
 		final Animation left = new TranslateAnimation(Animation.RELATIVE_TO_PARENT, -1f, Animation.RELATIVE_TO_PARENT, 0f, Animation.RELATIVE_TO_PARENT, 0f, Animation.RELATIVE_TO_PARENT, 0f);
-		right.setDuration(25000);
-		left.setDuration(25000);
+		right.setDuration(10000);
+		left.setDuration(10000);
 		right.setFillAfter(true);
 		left.setFillAfter(true);
 
@@ -709,7 +710,7 @@ public class CtrlActivity extends Activity implements OnClickListener, OnLongCli
 	public void setClipboard(String text) {
 		ClipboardManager clipboard = (ClipboardManager) getSystemService(Context.CLIPBOARD_SERVICE);
 		clipboard.setText(text);
-		Toast.makeText(CtrlActivity.this, "已经将命令复制到剪切板！", Toast.LENGTH_SHORT).show();
+		Toast.makeText(CtrlActivity.this, R.string.copy_to_clipboard_success, Toast.LENGTH_SHORT).show();
 	}
 
 	private void hideKeyboard(View v) {

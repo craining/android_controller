@@ -10,7 +10,7 @@
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="40dip"
-        android:text="常规控制"
+        android:text="@string/normal_title"
         android:textColor="#7FFF00"
         android:textSize="35sp" />
 
@@ -29,7 +29,7 @@
             android:layout_marginLeft="25dip"
             android:layout_marginRight="25dip"
             android:background="@drawable/btn_normal_bg"
-            android:text="调大音量" />
+            android:text="@string/normal_turn_up" />
 
         <Button
             android:id="@+id/btn_turn_down"
@@ -39,7 +39,7 @@
             android:layout_marginLeft="25dip"
             android:layout_marginRight="25dip"
             android:background="@drawable/btn_normal_bg"
-            android:text="静音" />
+            android:text="@string/normal_calm_down" />
 
         <Button
             android:id="@+id/btn_call_me"
@@ -49,7 +49,7 @@
             android:layout_marginLeft="25dip"
             android:layout_marginRight="25dip"
             android:background="@drawable/btn_normal_bg"
-            android:text="给我打电话" />
+            android:text="@string/normal_call_me" />
 
         <Button
             android:id="@+id/btn_record_time"
@@ -59,7 +59,7 @@
             android:layout_marginLeft="25dip"
             android:layout_marginRight="25dip"
             android:background="@drawable/btn_normal_bg"
-            android:text="录音N分钟" />
+            android:text="@string/normal_record_time" />
 
         <Button
             android:id="@+id/btn_record_start"
@@ -69,7 +69,7 @@
             android:layout_marginLeft="25dip"
             android:layout_marginRight="25dip"
             android:background="@drawable/btn_normal_bg"
-            android:text="开始录音" />
+            android:text="@string/normal_record_start" />
 
         <Button
             android:id="@+id/btn_record_end"
@@ -79,7 +79,7 @@
             android:layout_marginLeft="25dip"
             android:layout_marginRight="25dip"
             android:background="@drawable/btn_normal_bg"
-            android:text="结束录音" />
+            android:text="@string/normal_record_end" />
     </LinearLayout>
 
 </RelativeLayout>

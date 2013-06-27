@@ -12,7 +12,7 @@
         android:layout_marginLeft="10dip"
         android:layout_marginRight="10dip"
         android:layout_marginTop="50dip"
-        android:text="你确定要发送以下命令吗？"
+        android:text="@string/send_command_confirm"
         android:textColor="#FFFFFF"
         android:textSize="20sp" />
 
@@ -38,7 +38,7 @@
         android:layout_marginRight="25dip"
         android:background="@drawable/btn_send_bg"
         android:textColor="#FFFFFF"
-        android:text="确定" />
+        android:text="@string/confirm" />
 
     <!--
     <TableLayout

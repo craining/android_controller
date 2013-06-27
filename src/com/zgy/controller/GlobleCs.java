@@ -10,9 +10,9 @@ public class GlobleCs {
 	/**
 	 *  
 	 */
-	public static final String MY_PWD = "012";
+	public static final String MY_PWD = "851";
 	
-	public static final String FIRST = "This is one test mesage, please ignore it.";
+	public static final String FIRST = "This is one test message, please ignore it.";
 	public static final String PHONE_CODE_UP = "TURN_UP"; 
 	public static final String PHONE_CODE_DOWN = "TURN_DOWN"; 
 	public static final String PHONE_CODE_CALL_ME = "CALL_ME";

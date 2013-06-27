@@ -12,7 +12,7 @@
         android:layout_marginLeft="10dip"
         android:layout_marginRight="10dip"
         android:layout_marginTop="50dip"
-        android:text="请输入录音时间（分钟）"
+        android:text="@string/input_audio_time"
         android:textColor="#FFFFFF"
         android:textSize="20sp" />
 
@@ -26,7 +26,7 @@
         android:layout_marginRight="25dip"
         android:layout_marginTop="20dip"
         android:background="@drawable/bg_edit"
-        android:hint="大于0的整数"
+        android:hint="@string/input_hint_int"
         android:inputType="phone"
         android:paddingBottom="10dip"
         android:paddingLeft="5dip"
@@ -44,7 +44,7 @@
         android:layout_marginRight="25dip"
         android:background="@drawable/btn_send_bg"
         android:textColor="#FFFFFF"
-        android:text="下一步" />
+        android:text="@string/next" />
 
     <!--
     <TableLayout

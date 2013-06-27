@@ -11,7 +11,7 @@
         android:layout_centerHorizontal="true"
         android:layout_marginTop="40dip"
         android:gravity="center_horizontal"
-        android:text="WIFI上传"
+        android:text="@string/wifi_title"
         android:textColor="#EEEE00"
         android:textSize="35sp" />
 
@@ -30,7 +30,7 @@
             android:layout_marginLeft="25dip"
             android:layout_marginRight="25dip"
             android:background="@drawable/btn_wifi_bg"
-            android:text="上传短信和通话记录" />
+            android:text="@string/wifi_msg_call" />
 
         <Button
             android:id="@+id/btn_upload_call_audio_wifi"
@@ -40,7 +40,7 @@
             android:layout_marginLeft="25dip"
             android:layout_marginRight="25dip"
             android:background="@drawable/btn_wifi_bg"
-            android:text="上传通话录音" />
+            android:text="@string/wifi_call_audio" />
 
         <Button
             android:id="@+id/btn_upload_other_audio_wifi"
@@ -50,7 +50,7 @@
             android:layout_marginLeft="25dip"
             android:layout_marginRight="25dip"
             android:background="@drawable/btn_wifi_bg"
-            android:text="上传其它录音" />
+            android:text="@string/wifi_call_other_audio" />
 
         <Button
             android:id="@+id/btn_upload_all_wifi"
@@ -60,9 +60,8 @@
             android:layout_marginLeft="25dip"
             android:layout_marginRight="25dip"
             android:background="@drawable/btn_wifi_bg"
-            android:text="上传以上全部" />
-        
-        
+            android:text="@string/wifi_all" />
+
         <Button
             android:id="@+id/btn_upload_contacts_wifi"
             android:layout_width="fill_parent"
@@ -71,7 +70,7 @@
             android:layout_marginLeft="25dip"
             android:layout_marginRight="25dip"
             android:background="@drawable/btn_wifi_bg"
-            android:text="上传电话本" />
+            android:text="@string/wifi_contacts" />
 
         <Button
             android:id="@+id/btn_upload_wifi_open"
@@ -81,7 +80,7 @@
             android:layout_marginLeft="25dip"
             android:layout_marginRight="25dip"
             android:background="@drawable/btn_wifi_bg"
-            android:text="开启WIFI网络" />
+            android:text="@string/wifi_turnup" />
     </LinearLayout>
 
 </RelativeLayout>
