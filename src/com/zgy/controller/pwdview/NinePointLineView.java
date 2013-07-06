@@ -28,7 +28,7 @@ public class NinePointLineView extends View {
 	int selectedBitmapDiameter = selectedBitmap.getWidth();
 	int selectedBitmapRadius = selectedBitmapDiameter / 2;
 
-	PointInfo[] points = new PointInfo[9];
+	PointInfo[] points;
 
 	PointInfo startPoint = null;
 
@@ -54,19 +54,20 @@ public class NinePointLineView extends View {
 
 	@Override
 	protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
-		width = getWidth();
-		height = getHeight();
-		Log.e("NinePointLineView", "onMeasure  width=" + width + "   heigth=" + height);
-		Log.e("NinePointLineView", "onMeasure  widthMeasureSpec=" + widthMeasureSpec + "   heightMeasureSpecv=" + heightMeasureSpec);
-		if (width != 0 && height != 0) {
-			initPoints(points);
-		}
+		// Log.e("onMeasure", "onMeasure  width=" + width + "   heigth=" +
+		// height);
 		super.onMeasure(widthMeasureSpec, heightMeasureSpec);
 	}
 
 	@Override
 	protected void onLayout(boolean changed, int left, int top, int right, int bottom) {
 		Log.e("NinePointLineView", "onLayout");
+		width = getWidth();
+		height = getHeight();
+		Log.e("NinePointLineView", "onMeasure  width=" + width + "   heigth=" + height);
+		if (width != 0 && height != 0) {
+			initPoints(points);
+		}
 		super.onLayout(changed, left, top, right, bottom);
 	}
 
@@ -193,6 +194,7 @@ public class NinePointLineView extends View {
 	}
 
 	private void initPaint() {
+		points = new PointInfo[9];
 		initLinePaint(linePaint);
 		initWhiteLinePaint(whiteLinePaint);
 	}
@@ -222,6 +224,7 @@ public class NinePointLineView extends View {
 				canvas.drawBitmap(selectedBitmap, pointInfo.getSeletedX(), pointInfo.getSeletedY(), null);
 			}
 			canvas.drawBitmap(defaultBitmap, pointInfo.getDefaultX(), pointInfo.getDefaultY(), null);
+
 		}
 
 	}
