@@ -27,20 +27,6 @@
         android:textColor="#00EEEE"
         android:textSize="14sp" />
 
-    <Button
-        android:id="@+id/btn_pop_normal_ok"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginBottom="30dip"
-        android:layout_marginLeft="25dip"
-        android:layout_marginRight="25dip"
-        android:background="@drawable/btn_send_bg"
-        android:textColor="#FFFFFF"
-        android:text="@string/confirm" />
-
-    <!--
     <TableLayout
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
@@ -50,17 +36,28 @@
 
         <TableRow>
 
+            <Button
+                android:id="@+id/btn_pop_normal_ok"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_column="0"
+                android:layout_marginLeft="25dip"
+                android:layout_marginRight="25dip"
+                android:background="@drawable/btn_send_bg"
+                android:text="@string/confirm"
+                android:textColor="#FFFFFF" />
 
             <Button
-                android:id="@+id/btn_pop_normal_cancel"
+                android:id="@+id/btn_pop_normal_copy"
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
                 android:layout_column="1"
                 android:layout_marginLeft="25dip"
                 android:layout_marginRight="25dip"
-                android:text="取消" />
+                android:background="@drawable/btn_send_bg"
+                android:text="@string/copy_clipboard"
+                android:textColor="#FFFFFF" />
         </TableRow>
     </TableLayout>
-    -->
 
 </RelativeLayout>

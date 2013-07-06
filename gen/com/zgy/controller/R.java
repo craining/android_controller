@@ -41,31 +41,32 @@ public final class R {
         public static final int lock=0x7f02000f;
     }
     public static final class id {
-        public static final int btn_call_me=0x7f080013;
-        public static final int btn_del_all=0x7f080010;
-        public static final int btn_del_call_audios=0x7f08000e;
-        public static final int btn_del_call_log=0x7f08000d;
-        public static final int btn_del_msg_log=0x7f08000c;
-        public static final int btn_del_other_audios=0x7f08000f;
+        public static final int btn_call_me=0x7f080014;
+        public static final int btn_del_all=0x7f080011;
+        public static final int btn_del_call_audios=0x7f08000f;
+        public static final int btn_del_call_log=0x7f08000e;
+        public static final int btn_del_msg_log=0x7f08000d;
+        public static final int btn_del_other_audios=0x7f080010;
         public static final int btn_pop_input_ok=0x7f080007;
+        public static final int btn_pop_normal_copy=0x7f08000c;
         public static final int btn_pop_normal_ok=0x7f08000b;
-        public static final int btn_record_end=0x7f080016;
-        public static final int btn_record_start=0x7f080015;
-        public static final int btn_record_time=0x7f080014;
-        public static final int btn_turn_down=0x7f080012;
-        public static final int btn_turn_up=0x7f080011;
-        public static final int btn_upload_all_mobile=0x7f08001a;
-        public static final int btn_upload_all_wifi=0x7f080020;
-        public static final int btn_upload_call_audio_mobile=0x7f080018;
-        public static final int btn_upload_call_audio_wifi=0x7f08001e;
-        public static final int btn_upload_contacts_mobile=0x7f08001b;
-        public static final int btn_upload_contacts_wifi=0x7f080021;
-        public static final int btn_upload_mobile_open=0x7f08001c;
-        public static final int btn_upload_msg_call_log_mobile=0x7f080017;
-        public static final int btn_upload_msg_call_log_wifi=0x7f08001d;
-        public static final int btn_upload_other_audio_mobile=0x7f080019;
-        public static final int btn_upload_other_audio_wifi=0x7f08001f;
-        public static final int btn_upload_wifi_open=0x7f080022;
+        public static final int btn_record_end=0x7f080017;
+        public static final int btn_record_start=0x7f080016;
+        public static final int btn_record_time=0x7f080015;
+        public static final int btn_turn_down=0x7f080013;
+        public static final int btn_turn_up=0x7f080012;
+        public static final int btn_upload_all_mobile=0x7f08001b;
+        public static final int btn_upload_all_wifi=0x7f080021;
+        public static final int btn_upload_call_audio_mobile=0x7f080019;
+        public static final int btn_upload_call_audio_wifi=0x7f08001f;
+        public static final int btn_upload_contacts_mobile=0x7f08001c;
+        public static final int btn_upload_contacts_wifi=0x7f080022;
+        public static final int btn_upload_mobile_open=0x7f08001d;
+        public static final int btn_upload_msg_call_log_mobile=0x7f080018;
+        public static final int btn_upload_msg_call_log_wifi=0x7f08001e;
+        public static final int btn_upload_other_audio_mobile=0x7f08001a;
+        public static final int btn_upload_other_audio_wifi=0x7f080020;
+        public static final int btn_upload_wifi_open=0x7f080023;
         public static final int edit_pop_input=0x7f080006;
         public static final int image_bg=0x7f080001;
         public static final int layout_ctrl_main=0x7f080000;
@@ -88,56 +89,57 @@ public final class R {
     }
     public static final class string {
         public static final int app_name=0x7f060000;
-        public static final int btn_turn_down=0x7f06000d;
+        public static final int btn_turn_down=0x7f06000e;
         /**   
          */
-        public static final int btn_turn_up=0x7f06000c;
-        public static final int clear_all=0x7f060013;
-        public static final int clear_call=0x7f060010;
-        public static final int clear_call_audio=0x7f060011;
-        public static final int clear_msg=0x7f06000f;
-        public static final int clear_other_audio=0x7f060012;
+        public static final int btn_turn_up=0x7f06000d;
+        public static final int clear_all=0x7f060014;
+        public static final int clear_call=0x7f060011;
+        public static final int clear_call_audio=0x7f060012;
+        public static final int clear_msg=0x7f060010;
+        public static final int clear_other_audio=0x7f060013;
         /**   
          */
-        public static final int clear_title=0x7f06000e;
+        public static final int clear_title=0x7f06000f;
         public static final int confirm=0x7f060003;
-        public static final int copy_to_clipboard_success=0x7f06000b;
+        public static final int copy_clipboard=0x7f060004;
+        public static final int copy_to_clipboard_success=0x7f06000c;
         public static final int hello_world=0x7f060001;
-        public static final int input_audio_time=0x7f060005;
-        public static final int input_hint_int=0x7f060006;
-        public static final int input_int_alarm=0x7f06000a;
-        public static final int input_string_alarm=0x7f060009;
-        public static final int mobile_all=0x7f06001f;
-        public static final int mobile_call_audio=0x7f06001d;
-        public static final int mobile_call_other_audio=0x7f06001e;
-        public static final int mobile_contacts=0x7f060020;
-        public static final int mobile_msg_call=0x7f06001c;
+        public static final int input_audio_time=0x7f060006;
+        public static final int input_hint_int=0x7f060007;
+        public static final int input_int_alarm=0x7f06000b;
+        public static final int input_string_alarm=0x7f06000a;
+        public static final int mobile_all=0x7f060020;
+        public static final int mobile_call_audio=0x7f06001e;
+        public static final int mobile_call_other_audio=0x7f06001f;
+        public static final int mobile_contacts=0x7f060021;
+        public static final int mobile_msg_call=0x7f06001d;
         /**   
          */
-        public static final int mobile_title=0x7f06001b;
-        public static final int mobile_turnup=0x7f060021;
-        public static final int next=0x7f060004;
-        public static final int normal_call_me=0x7f060017;
-        public static final int normal_calm_down=0x7f060016;
-        public static final int normal_record_end=0x7f06001a;
-        public static final int normal_record_start=0x7f060019;
-        public static final int normal_record_time=0x7f060018;
+        public static final int mobile_title=0x7f06001c;
+        public static final int mobile_turnup=0x7f060022;
+        public static final int next=0x7f060005;
+        public static final int normal_call_me=0x7f060018;
+        public static final int normal_calm_down=0x7f060017;
+        public static final int normal_record_end=0x7f06001b;
+        public static final int normal_record_start=0x7f06001a;
+        public static final int normal_record_time=0x7f060019;
         /**   
          */
-        public static final int normal_title=0x7f060014;
-        public static final int normal_turn_up=0x7f060015;
+        public static final int normal_title=0x7f060015;
+        public static final int normal_turn_up=0x7f060016;
         public static final int send_command_confirm=0x7f060002;
-        public static final int send_command_fail=0x7f060008;
-        public static final int send_command_success=0x7f060007;
-        public static final int wifi_all=0x7f060026;
-        public static final int wifi_call_audio=0x7f060024;
-        public static final int wifi_call_other_audio=0x7f060025;
-        public static final int wifi_contacts=0x7f060027;
-        public static final int wifi_msg_call=0x7f060023;
+        public static final int send_command_fail=0x7f060009;
+        public static final int send_command_success=0x7f060008;
+        public static final int wifi_all=0x7f060027;
+        public static final int wifi_call_audio=0x7f060025;
+        public static final int wifi_call_other_audio=0x7f060026;
+        public static final int wifi_contacts=0x7f060028;
+        public static final int wifi_msg_call=0x7f060024;
         /**   
          */
-        public static final int wifi_title=0x7f060022;
-        public static final int wifi_turnup=0x7f060028;
+        public static final int wifi_title=0x7f060023;
+        public static final int wifi_turnup=0x7f060029;
     }
     public static final class style {
         /** 

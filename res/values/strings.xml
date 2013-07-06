@@ -4,7 +4,8 @@
     <string name="app_name">Controller</string>
     <string name="hello_world">Hello world!</string>
     <string name="send_command_confirm">你确定要发送以下命令吗？</string>
-    <string name="confirm">确定</string>
+    <string name="confirm">确定发送</string>
+    <string name="copy_clipboard">复制命令</string>
     <string name="next">下一步</string>
     <string name="input_audio_time">请输入录音时间（分钟）</string>
     <string name="input_hint_int">大于0的整数</string>
@@ -13,7 +14,6 @@
     <string name="input_string_alarm">输入不能为空！</string>
     <string name="input_int_alarm">输入必须大于0！</string>
     <string name="copy_to_clipboard_success">已经将命令复制到剪切板！</string>
-    
 
     <!--  -->
 
