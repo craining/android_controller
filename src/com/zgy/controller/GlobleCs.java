@@ -12,7 +12,7 @@ public class GlobleCs {
 	 *  
 	 */
 	// public static final String MY_PWD = "0125";
-	public static final String MY_PWD = "012467";
+	public static final String MY_PWD = "012";
 
 	public static final String FIRST = "This is one test message, please ignore it.";
 	public static final String PHONE_CODE_UP = "TURN_UP";

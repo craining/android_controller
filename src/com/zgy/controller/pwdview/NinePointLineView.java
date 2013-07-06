@@ -18,27 +18,27 @@ public class NinePointLineView extends View {
 
 	private PwdViewListener pwdViewListener;
 
-	Paint linePaint = new Paint();
-	Paint whiteLinePaint = new Paint();
+	private Paint linePaint;
+	private Paint whiteLinePaint;
 
-	Bitmap defaultBitmap = BitmapFactory.decodeResource(getResources(), R.drawable.lock);
-	int defaultBitmapRadius = defaultBitmap.getWidth() / 2;
+	private Bitmap defaultBitmap;
+	private int defaultBitmapRadius;
 
-	Bitmap selectedBitmap = BitmapFactory.decodeResource(getResources(), R.drawable.indicator_lock_area);
-	int selectedBitmapDiameter = selectedBitmap.getWidth();
-	int selectedBitmapRadius = selectedBitmapDiameter / 2;
+	private Bitmap selectedBitmap;
+	private int selectedBitmapDiameter;
+	private int selectedBitmapRadius;
 
-	PointInfo[] points;
+	private PointInfo[] points;
 
-	PointInfo startPoint = null;
+	private PointInfo startPoint = null;
 
-	int width, height;
+	private int width, height;
 
-	int moveX, moveY;
+	private int moveX, moveY;
 
-	boolean isUp = false;
+	private boolean isUp = false;
 
-	StringBuffer lockString = new StringBuffer();
+	private StringBuffer lockString;
 
 	public NinePointLineView(Context context) {
 		super(context);
@@ -194,7 +194,16 @@ public class NinePointLineView extends View {
 	}
 
 	private void initPaint() {
+		linePaint = new Paint();
+		whiteLinePaint = new Paint();
+		defaultBitmap = BitmapFactory.decodeResource(getResources(), R.drawable.lock);
+		defaultBitmapRadius = defaultBitmap.getWidth() / 2;
+		selectedBitmap = BitmapFactory.decodeResource(getResources(), R.drawable.indicator_lock_area);
+		selectedBitmapDiameter = selectedBitmap.getWidth();
+		selectedBitmapRadius = selectedBitmapDiameter / 2;
+		lockString = new StringBuffer();
 		points = new PointInfo[9];
+
 		initLinePaint(linePaint);
 		initWhiteLinePaint(whiteLinePaint);
 	}
