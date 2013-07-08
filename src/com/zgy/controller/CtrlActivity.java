@@ -84,7 +84,7 @@ public class CtrlActivity extends Activity implements OnClickListener {
 	private int pageid = 0;
 
 	private static final int ANIM_BACK_TIEM = 12000;
-	private static final int POPWINDOW_DISMISS_DELAY = 100;
+	private static final int POPWINDOW_DISMISS_DELAY = 350;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
