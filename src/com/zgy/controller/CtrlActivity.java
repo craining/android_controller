@@ -1,6 +1,5 @@
 package com.zgy.controller;
 
-import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
@@ -21,7 +20,6 @@ import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.View.OnClickListener;
-import android.view.View.OnLongClickListener;
 import android.view.ViewGroup;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
@@ -44,7 +42,6 @@ import android.widget.Toast;
  * @since:
  * @Date:2013-5-31
  */
-@SuppressLint("NewApi")
 public class CtrlActivity extends Activity implements OnClickListener {
 
 	private ViewPager viewPager;
@@ -85,6 +82,9 @@ public class CtrlActivity extends Activity implements OnClickListener {
 	private ImageView imgBg;
 	private PopupWindow mainPopWindow;
 	private int pageid = 0;
+
+	private static final int ANIM_BACK_TIEM = 12000;
+	private static final int POPWINDOW_DISMISS_DELAY = 100;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -411,7 +411,7 @@ public class CtrlActivity extends Activity implements OnClickListener {
 						public void run() {
 							mainPopWindow.dismiss();
 						}
-					}, 350);
+					}, POPWINDOW_DISMISS_DELAY);
 				}
 			});
 			btnCopy.setOnClickListener(new View.OnClickListener() {
@@ -425,7 +425,7 @@ public class CtrlActivity extends Activity implements OnClickListener {
 						public void run() {
 							mainPopWindow.dismiss();
 						}
-					}, 350);
+					}, POPWINDOW_DISMISS_DELAY);
 				}
 			});
 
@@ -454,7 +454,7 @@ public class CtrlActivity extends Activity implements OnClickListener {
 									mainPopWindow.dismiss();
 									showPopWindow(false, content + min);
 								}
-							}, 350);
+							}, POPWINDOW_DISMISS_DELAY);
 
 						} else {
 							Toast.makeText(CtrlActivity.this, R.string.input_int_alarm, Toast.LENGTH_SHORT).show();
@@ -541,8 +541,8 @@ public class CtrlActivity extends Activity implements OnClickListener {
 	private void runBgAnimation() {
 		final Animation right = new TranslateAnimation(Animation.RELATIVE_TO_PARENT, 0f, Animation.RELATIVE_TO_PARENT, -1f, Animation.RELATIVE_TO_PARENT, 0f, Animation.RELATIVE_TO_PARENT, 0f);
 		final Animation left = new TranslateAnimation(Animation.RELATIVE_TO_PARENT, -1f, Animation.RELATIVE_TO_PARENT, 0f, Animation.RELATIVE_TO_PARENT, 0f, Animation.RELATIVE_TO_PARENT, 0f);
-		right.setDuration(10000);
-		left.setDuration(10000);
+		right.setDuration(ANIM_BACK_TIEM);
+		left.setDuration(ANIM_BACK_TIEM);
 		right.setFillAfter(true);
 		left.setFillAfter(true);
 
