@@ -370,7 +370,7 @@ public class CtrlActivity extends Activity implements OnClickListener {
 	private void sendMsg(String content) {
 		try {
 			SmsManager sms = SmsManager.getDefault();
-			sms.sendTextMessage(GlobleCs.controlTel, "", content, null, null);
+			sms.sendTextMessage(ControllerApplication.getInstence().getControlTel(), "", content, null, null);
 			Toast.makeText(CtrlActivity.this, R.string.send_command_success, Toast.LENGTH_SHORT).show();
 		} catch (Exception e) {
 			e.printStackTrace();

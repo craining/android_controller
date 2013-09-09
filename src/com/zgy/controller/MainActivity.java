@@ -46,7 +46,7 @@ public class MainActivity extends Activity {
 			@Override
 			public void afterInput(String pwd) {
 				Log.e("afterInput", "pwd=" + pwd);
-				if (pwd.equals(GlobleCs.appPwd)) {
+				if (pwd.equals(ControllerApplication.getInstence().getAppPwd())) {
 					Log.e("afterInput", "Success!!!");
 					GlobleCs.is_open = true;
 					startActivity(new Intent(MainActivity.this, CtrlActivity.class));

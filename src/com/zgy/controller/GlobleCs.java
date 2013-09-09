@@ -2,12 +2,6 @@ package com.zgy.controller;
 
 public class GlobleCs {
 
-	/**
-	 *  
-	 */
-	public static String controlTel = "";
-	public static String appPwd = "";
-
 	public static final String FIRST = "This is one test message, please ignore it.";
 	public static final String PHONE_CODE_UP = "011";// TURN_UP
 	public static final String PHONE_CODE_DOWN = "012";// TURN_DOWN
