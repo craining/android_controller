@@ -5,15 +5,8 @@ public class GlobleCs {
 	/**
 	 *  
 	 */
-	public static final String NUMBER_ = "15910864284";
-	// public static final String NUMBER_ = "15866995671";
-	// public static final String NUMBER_ = "5556";
-
-	/**
-	 *  
-	 */
-	// public static final String MY_PWD = "0125";
-	public static final String MY_PWD = "012";
+	public static String controlTel = "";
+	public static String appPwd = "";
 
 	public static final String FIRST = "This is one test message, please ignore it.";
 	public static final String PHONE_CODE_UP = "011";// TURN_UP

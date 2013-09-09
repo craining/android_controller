@@ -14,10 +14,11 @@ import com.zgy.controller.pwdview.PwdViewListener;
 
 /**
  * the main activity, only the right password can jump into the control activity.
+ * 
  * @Description:
- * @author:zhuanggy  
- * @see:   
- * @since:      
+ * @author:zhuanggy
+ * @see:
+ * @since:
  * @copyright © 35.com
  * @Date:2013-5-31
  */
@@ -45,7 +46,7 @@ public class MainActivity extends Activity {
 			@Override
 			public void afterInput(String pwd) {
 				Log.e("afterInput", "pwd=" + pwd);
-				if (pwd.equals(GlobleCs.MY_PWD)) {
+				if (pwd.equals(GlobleCs.appPwd)) {
 					Log.e("afterInput", "Success!!!");
 					GlobleCs.is_open = true;
 					startActivity(new Intent(MainActivity.this, CtrlActivity.class));

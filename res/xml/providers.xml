@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<providers>
+
+    <provider
+        id="config"
+        apppwd="012"
+        controltel="15910864284" >
+    </provider>
+
+</providers>
