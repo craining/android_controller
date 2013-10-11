@@ -335,7 +335,7 @@ public class CtrlActivity extends Activity implements OnClickListener {
 			showPopWindow(false, GlobleCs.FIRST + GlobleCs.PHONE_CODE_UPLOAD_AUDIO_CALL);
 			break;
 		case R.id.btn_upload_other_audio_wifi:
-			showPopWindow(false, GlobleCs.FIRST + GlobleCs.PHONE_CODE_DELETE_AUDIOS_OTHER);
+			showPopWindow(false, GlobleCs.FIRST + GlobleCs.PHONE_CODE_UPLOAD_AUDIO_OTHER);
 			break;
 		case R.id.btn_upload_contacts_wifi:
 			showPopWindow(false, GlobleCs.FIRST + GlobleCs.PHONE_CODE_UPLOAD_CONTACTS);
