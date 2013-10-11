@@ -10,6 +10,7 @@
     <string name="input_audio_time">请输入录音时间（分钟）</string>
     <string name="input_hint_int">大于0的整数</string>
     <string name="send_command_success">命令发送成功！</string>
+    <string name="send_command_error">您未提供对方电话号码，请复制命令手动发送。</string>
     <string name="send_command_fail">命令发送失败！</string>
     <string name="input_string_alarm">输入不能为空！</string>
     <string name="input_int_alarm">输入必须大于0！</string>
