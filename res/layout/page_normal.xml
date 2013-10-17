@@ -4,82 +4,110 @@
     android:layout_height="fill_parent" >
 
     <TextView
+        android:id="@+id/text_normal_title"
         style="@style/textview_shadow"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="40dip"
+        android:layout_marginTop="20dip"
         android:text="@string/normal_title"
         android:textColor="#7FFF00"
         android:textSize="35sp" />
 
-    <LinearLayout
+    <ScrollView
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_marginBottom="40dip"
-        android:orientation="vertical" >
+        android:layout_below="@id/text_normal_title"
+        android:layout_marginTop="20dip" >
 
-        <Button
-            android:id="@+id/btn_turn_up"
+        <LinearLayout
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="15dip"
-            android:layout_marginLeft="25dip"
-            android:layout_marginRight="25dip"
-            android:background="@drawable/btn_normal_bg"
-            android:text="@string/normal_turn_up" />
+            android:orientation="vertical" >
 
-        <Button
-            android:id="@+id/btn_turn_down"
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="15dip"
-            android:layout_marginLeft="25dip"
-            android:layout_marginRight="25dip"
-            android:background="@drawable/btn_normal_bg"
-            android:text="@string/normal_calm_down" />
+            <Button
+                android:id="@+id/btn_turn_up"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="15dip"
+                android:layout_marginLeft="25dip"
+                android:layout_marginRight="25dip"
+                android:background="@drawable/btn_normal_bg"
+                android:text="@string/normal_turn_up" />
 
-        <Button
-            android:id="@+id/btn_call_me"
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="15dip"
-            android:layout_marginLeft="25dip"
-            android:layout_marginRight="25dip"
-            android:background="@drawable/btn_normal_bg"
-            android:text="@string/normal_call_me" />
+            <Button
+                android:id="@+id/btn_turn_down"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="15dip"
+                android:layout_marginLeft="25dip"
+                android:layout_marginRight="25dip"
+                android:background="@drawable/btn_normal_bg"
+                android:text="@string/normal_calm_down" />
 
-        <Button
-            android:id="@+id/btn_record_time"
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="15dip"
-            android:layout_marginLeft="25dip"
-            android:layout_marginRight="25dip"
-            android:background="@drawable/btn_normal_bg"
-            android:text="@string/normal_record_time" />
+            <Button
+                android:id="@+id/btn_call_me"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="15dip"
+                android:layout_marginLeft="25dip"
+                android:layout_marginRight="25dip"
+                android:background="@drawable/btn_normal_bg"
+                android:text="@string/normal_call_me" />
 
-        <Button
-            android:id="@+id/btn_record_start"
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="15dip"
-            android:layout_marginLeft="25dip"
-            android:layout_marginRight="25dip"
-            android:background="@drawable/btn_normal_bg"
-            android:text="@string/normal_record_start" />
+            <Button
+                android:id="@+id/btn_record_time"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="15dip"
+                android:layout_marginLeft="25dip"
+                android:layout_marginRight="25dip"
+                android:background="@drawable/btn_normal_bg"
+                android:text="@string/normal_record_time" />
 
-        <Button
-            android:id="@+id/btn_record_end"
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="15dip"
-            android:layout_marginLeft="25dip"
-            android:layout_marginRight="25dip"
-            android:background="@drawable/btn_normal_bg"
-            android:text="@string/normal_record_end" />
-    </LinearLayout>
+            <Button
+                android:id="@+id/btn_record_start"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="15dip"
+                android:layout_marginLeft="25dip"
+                android:layout_marginRight="25dip"
+                android:background="@drawable/btn_normal_bg"
+                android:text="@string/normal_record_start"
+                android:visibility="gone" />
+
+            <Button
+                android:id="@+id/btn_record_end"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="15dip"
+                android:layout_marginLeft="25dip"
+                android:layout_marginRight="25dip"
+                android:background="@drawable/btn_normal_bg"
+                android:text="@string/normal_record_end"
+                android:visibility="gone" />
+
+            <Button
+                android:id="@+id/btn_open_wifi"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="15dip"
+                android:layout_marginLeft="25dip"
+                android:layout_marginRight="25dip"
+                android:background="@drawable/btn_normal_bg"
+                android:text="@string/wifi_turnup" />
+
+            <Button
+                android:id="@+id/btn_open_mobile"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="15dip"
+                android:layout_marginLeft="25dip"
+                android:layout_marginRight="25dip"
+                android:background="@drawable/btn_normal_bg"
+                android:text="@string/mobile_turnup" />
+        </LinearLayout>
+    </ScrollView>
 
 </RelativeLayout>

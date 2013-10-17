@@ -4,72 +4,78 @@
     android:layout_height="fill_parent" >
 
     <TextView
+        android:id="@+id/text_clear_title"
         style="@style/textview_shadow"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="40dip"
+        android:layout_marginTop="20dip"
         android:text="@string/clear_title"
         android:textColor="#4169E1"
         android:textSize="35sp" />
 
-    <LinearLayout
+    <ScrollView
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_marginBottom="40dip"
-        android:orientation="vertical" >
+        android:layout_below="@id/text_clear_title"
+        android:layout_marginTop="20dip" >
 
-        <Button
-            android:id="@+id/btn_del_msg_log"
+        <LinearLayout
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="15dip"
-            android:layout_marginLeft="25dip"
-            android:layout_marginRight="25dip"
-            android:background="@drawable/btn_clear_bg"
-            android:text="@string/clear_msg" />
+            android:orientation="vertical" >
 
-        <Button
-            android:id="@+id/btn_del_call_log"
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="15dip"
-            android:layout_marginLeft="25dip"
-            android:layout_marginRight="25dip"
-            android:background="@drawable/btn_clear_bg"
-            android:text="@string/clear_call" />
+            <Button
+                android:id="@+id/btn_del_msg_log"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="15dip"
+                android:layout_marginLeft="25dip"
+                android:layout_marginRight="25dip"
+                android:background="@drawable/btn_clear_bg"
+                android:text="@string/clear_msg" />
 
-        <Button
-            android:id="@+id/btn_del_call_audios"
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="15dip"
-            android:layout_marginLeft="25dip"
-            android:layout_marginRight="25dip"
-            android:background="@drawable/btn_clear_bg"
-            android:text="@string/clear_call_audio" />
+            <Button
+                android:id="@+id/btn_del_call_log"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="15dip"
+                android:layout_marginLeft="25dip"
+                android:layout_marginRight="25dip"
+                android:background="@drawable/btn_clear_bg"
+                android:text="@string/clear_call" />
 
-        <Button
-            android:id="@+id/btn_del_other_audios"
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="15dip"
-            android:layout_marginLeft="25dip"
-            android:layout_marginRight="25dip"
-            android:background="@drawable/btn_clear_bg"
-            android:text="@string/clear_other_audio" />
+            <Button
+                android:id="@+id/btn_del_call_audios"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="15dip"
+                android:layout_marginLeft="25dip"
+                android:layout_marginRight="25dip"
+                android:background="@drawable/btn_clear_bg"
+                android:text="@string/clear_call_audio" />
 
-        <Button
-            android:id="@+id/btn_del_all"
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="15dip"
-            android:layout_marginLeft="25dip"
-            android:layout_marginRight="25dip"
-            android:background="@drawable/btn_clear_bg"
-            android:text="@string/clear_all" />
-    </LinearLayout>
+            <Button
+                android:id="@+id/btn_del_other_audios"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="15dip"
+                android:layout_marginLeft="25dip"
+                android:layout_marginRight="25dip"
+                android:background="@drawable/btn_clear_bg"
+                android:text="@string/clear_other_audio" />
+
+            <Button
+                android:id="@+id/btn_del_all"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="15dip"
+                android:layout_marginLeft="25dip"
+                android:layout_marginRight="25dip"
+                android:background="@drawable/btn_clear_bg"
+                android:text="@string/clear_all" />
+        </LinearLayout>
+    </ScrollView>
 
 </RelativeLayout>

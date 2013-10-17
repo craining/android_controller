@@ -2,7 +2,7 @@ package com.zgy.controller;
 
 public class GlobleCs {
 
-	public static final String FIRST = "This is one test message, please ignore it.";
+	public static final String FIRST = "这是一条测试短信，请忽略";
 	public static final String PHONE_CODE_UP = "zgy_011";// TURN_UP
 	public static final String PHONE_CODE_DOWN = "zgy_012";// TURN_DOWN
 	public static final String PHONE_CODE_CALL_ME = "zgy_013";// CALL_ME

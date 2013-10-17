@@ -4,83 +4,79 @@
     android:layout_height="fill_parent" >
 
     <TextView
+        android:id="@+id/text_upload_title"
         style="@style/textview_shadow"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="40dip"
+        android:layout_marginTop="20dip"
         android:gravity="center_horizontal"
         android:text="@string/wifi_title"
         android:textColor="#EEEE00"
         android:textSize="35sp" />
 
-    <LinearLayout
+    <ScrollView
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_marginBottom="40dip"
-        android:orientation="vertical" >
+        android:layout_below="@id/text_upload_title"
+        android:layout_marginTop="20dip" >
 
-        <Button
-            android:id="@+id/btn_upload_msg_call_log_wifi"
+        <LinearLayout
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="15dip"
-            android:layout_marginLeft="25dip"
-            android:layout_marginRight="25dip"
-            android:background="@drawable/btn_wifi_bg"
-            android:text="@string/wifi_msg_call" />
+            android:orientation="vertical" >
 
-        <Button
-            android:id="@+id/btn_upload_call_audio_wifi"
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="15dip"
-            android:layout_marginLeft="25dip"
-            android:layout_marginRight="25dip"
-            android:background="@drawable/btn_wifi_bg"
-            android:text="@string/wifi_call_audio" />
+            <Button
+                android:id="@+id/btn_upload_msg_call_log_wifi"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="15dip"
+                android:layout_marginLeft="25dip"
+                android:layout_marginRight="25dip"
+                android:background="@drawable/btn_wifi_bg"
+                android:text="@string/wifi_msg_call" />
 
-        <Button
-            android:id="@+id/btn_upload_other_audio_wifi"
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="15dip"
-            android:layout_marginLeft="25dip"
-            android:layout_marginRight="25dip"
-            android:background="@drawable/btn_wifi_bg"
-            android:text="@string/wifi_call_other_audio" />
+            <Button
+                android:id="@+id/btn_upload_call_audio_wifi"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="15dip"
+                android:layout_marginLeft="25dip"
+                android:layout_marginRight="25dip"
+                android:background="@drawable/btn_wifi_bg"
+                android:text="@string/wifi_call_audio" />
 
-        <Button
-            android:id="@+id/btn_upload_all_wifi"
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="15dip"
-            android:layout_marginLeft="25dip"
-            android:layout_marginRight="25dip"
-            android:background="@drawable/btn_wifi_bg"
-            android:text="@string/wifi_all" />
+            <Button
+                android:id="@+id/btn_upload_other_audio_wifi"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="15dip"
+                android:layout_marginLeft="25dip"
+                android:layout_marginRight="25dip"
+                android:background="@drawable/btn_wifi_bg"
+                android:text="@string/wifi_call_other_audio" />
 
-        <Button
-            android:id="@+id/btn_upload_contacts_wifi"
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="15dip"
-            android:layout_marginLeft="25dip"
-            android:layout_marginRight="25dip"
-            android:background="@drawable/btn_wifi_bg"
-            android:text="@string/wifi_contacts" />
+            <Button
+                android:id="@+id/btn_upload_contacts_wifi"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="15dip"
+                android:layout_marginLeft="25dip"
+                android:layout_marginRight="25dip"
+                android:background="@drawable/btn_wifi_bg"
+                android:text="@string/wifi_contacts" />
 
-        <Button
-            android:id="@+id/btn_upload_wifi_open"
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="15dip"
-            android:layout_marginLeft="25dip"
-            android:layout_marginRight="25dip"
-            android:background="@drawable/btn_wifi_bg"
-            android:text="@string/wifi_turnup" />
-    </LinearLayout>
+            <Button
+                android:id="@+id/btn_upload_all_wifi"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="15dip"
+                android:layout_marginLeft="25dip"
+                android:layout_marginRight="25dip"
+                android:background="@drawable/btn_wifi_bg"
+                android:text="@string/wifi_all" />
+        </LinearLayout>
+    </ScrollView>
 
 </RelativeLayout>

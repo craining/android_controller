@@ -27,37 +27,78 @@
         android:textColor="#00EEEE"
         android:textSize="14sp" />
 
-    <TableLayout
+    <LinearLayout
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_marginBottom="30dip"
-        android:stretchColumns="0,1" >
+        android:orientation="vertical" >
 
-        <TableRow>
+        <TableLayout
+            android:id="@+id/layout_wifi_mobile_select"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:stretchColumns="0,1" >
 
-            <Button
-                android:id="@+id/btn_pop_normal_ok"
+            <TextView
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
-                android:layout_column="0"
-                android:layout_marginLeft="25dip"
-                android:layout_marginRight="25dip"
-                android:background="@drawable/btn_send_bg"
-                android:text="@string/confirm"
-                android:textColor="#FFFFFF" />
+                android:layout_marginBottom="10dip"
+                android:layout_marginLeft="10dip"
+                android:layout_marginRight="10dip"
+                android:text="@string/wifi_gprs_select"
+                android:textColor="#FFFFFF"
+                android:textSize="20sp" />
 
-            <Button
-                android:id="@+id/btn_pop_normal_copy"
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
-                android:layout_column="1"
-                android:layout_marginLeft="25dip"
-                android:layout_marginRight="25dip"
-                android:background="@drawable/btn_send_bg"
-                android:text="@string/copy_clipboard"
-                android:textColor="#FFFFFF" />
-        </TableRow>
-    </TableLayout>
+            <TableRow>
+
+                <RadioButton
+                    android:id="@+id/radiobtn_wifi"
+                    android:layout_marginLeft="25dip"
+                    android:layout_marginRight="25dip"
+                    android:text="@string/wifi"
+                    android:textColor="#FFFFFF" />
+
+                <RadioButton
+                    android:id="@+id/radiobtn_gprs_wifi"
+                    android:layout_marginLeft="25dip"
+                    android:layout_marginRight="25dip"
+                    android:text="@string/wifi_gprs"
+                    android:textColor="#FFFFFF" />
+            </TableRow>
+        </TableLayout>
+
+        <TableLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dip"
+            android:stretchColumns="0,1" >
+
+            <TableRow>
+
+                <Button
+                    android:id="@+id/btn_pop_normal_ok"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_column="0"
+                    android:layout_marginLeft="25dip"
+                    android:layout_marginRight="25dip"
+                    android:background="@drawable/btn_send_bg"
+                    android:text="@string/confirm"
+                    android:textColor="#FFFFFF" />
+
+                <Button
+                    android:id="@+id/btn_pop_normal_copy"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_column="1"
+                    android:layout_marginLeft="25dip"
+                    android:layout_marginRight="25dip"
+                    android:background="@drawable/btn_send_bg"
+                    android:text="@string/copy_clipboard"
+                    android:textColor="#FFFFFF" />
+            </TableRow>
+        </TableLayout>
+    </LinearLayout>
 
 </RelativeLayout>
