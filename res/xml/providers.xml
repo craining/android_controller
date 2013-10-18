@@ -2,7 +2,6 @@
 <providers>
 
     <provider
-        id="config"
         apppwd="012"
         controltel="" >
     </provider>
